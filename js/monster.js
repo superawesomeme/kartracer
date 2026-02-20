@@ -168,7 +168,7 @@ export function createMonster(scene, colorScheme = 0) {
   }
 
   // ── Little arms ────────────────────────────────────────────────────────────
-  const armGeo = new THREE.CapsuleGeometry(0.07, 0.2, 4, 8);
+  const armGeo = new THREE.CylinderGeometry(0.07, 0.06, 0.28, 8);
   const armMat = new THREE.MeshLambertMaterial({ color: scheme.body });
   [-0.6, 0.6].forEach((xOff, i) => {
     const arm = new THREE.Mesh(armGeo, armMat);
