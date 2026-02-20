@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🏎️ Monster Kart Racer</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "./js/lib/three.module.js"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Start Screen -->
+  <div id="start-screen" class="screen">
+    <div class="screen-inner">
+      <h1 class="game-title">🏎️ Monster Kart Racer</h1>
+      <p class="subtitle">3 Laps · 4 Racers · Monsters Unleashed</p>
+      <div class="controls-panel">
+        <h2>Controls</h2>
+        <div class="controls-grid">
+          <div class="control-item"><span class="key">↑</span> Accelerate</div>
+          <div class="control-item"><span class="key">↓</span> Brake / Reverse</div>
+          <div class="control-item"><span class="key">←</span><span class="key">→</span> Steer</div>
+          <div class="control-item"><span class="key">Space</span> Use Item</div>
+        </div>
+      </div>
+      <div class="tips-panel">
+        <p>🪙 Collect coins for speed boosts!</p>
+        <p>❓ Grab mystery boxes for items!</p>
+        <p>⚡ Stay on track or lose coins!</p>
+      </div>
+      <button id="start-btn" class="btn-primary">START RACE</button>
+    </div>
+  </div>
+
+  <!-- Game View -->
+  <div id="game-view" class="hidden">
+    <canvas id="game-canvas"></canvas>
+
+    <!-- HUD Overlay -->
+    <div id="hud">
+
+      <!-- Top-left: Position & Lap -->
+      <div id="hud-position-block" class="hud-block hud-top-left">
+        <div id="hud-position" class="hud-position">1<span class="ordinal">st</span></div>
+        <div id="hud-lap" class="hud-lap">Lap 1 / 3</div>
+      </div>
+
+      <!-- Top-right: Speed -->
+      <div id="hud-speed-block" class="hud-block hud-top-right">
+        <div id="hud-speed" class="hud-speed">0</div>
+        <div class="hud-speed-label">km/h</div>
+      </div>
+
+      <!-- Bottom-left: Coins -->
+      <div id="hud-coins-block" class="hud-block hud-bottom-left">
+        <div id="hud-coins" class="hud-coins">🪙 × 0</div>
+      </div>
+
+      <!-- Bottom-right: Held Item -->
+      <div id="hud-item-block" class="hud-block hud-bottom-right">
+        <div id="hud-item" class="hud-item">—</div>
+        <div class="hud-item-label">ITEM</div>
+      </div>
+
+      <!-- Center: Countdown -->
+      <div id="hud-countdown" class="hud-countdown hidden"></div>
+
+      <!-- Center: Message (GO! / FINISH etc.) -->
+      <div id="hud-message" class="hud-message hidden"></div>
+
+    </div>
+  </div>
+
+  <!-- Finish Screen -->
+  <div id="finish-screen" class="screen hidden">
+    <div class="screen-inner">
+      <h1 class="finish-title">🏁 Race Finished!</h1>
+      <div id="finish-standings" class="standings"></div>
+      <button id="restart-btn" class="btn-primary">PLAY AGAIN</button>
+    </div>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
